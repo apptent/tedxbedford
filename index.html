@@ -19,7 +19,6 @@
 		font-family: sans-serif;
 	}
 	div.item {
-		margin-bottom: 100px;
 		display: none;
 	}
 	div.quote {
@@ -33,26 +32,40 @@
 		<img src="content/images/apptent.jpg" style="max-width:100%;"/>
 	</div>
 
-	<div class="item quote" id="punk" data-next="cury">
+	<div class="item quote" id="punk" data-next="phindle1">
 		<h1>"I was a pretty rubbish singer...but that was the point"</h1>
 		<div>Richard Jobson on joining his punk rock band</div>
 	</div>
+	
+	<div class="item" id="phindle1" data-next="phindle2">
+		<img src="content/images/phindle1.jpg" style="max-width:100%;"/>
+	</div>
+	<div class="item" id="phindle2" data-next="cury">
+		<img src="content/images/phindle2.jpg" style="max-width:100%;"/>
+	</div>
 
 	<div class="item quote" id="cury" data-next="jacklang">
-		<h2>"Take persel, sawge, grene garlec, chibolles, oynouns, leek, borage, 
+		<h4>"Take persel, sawge, grene garlec, chibolles, oynouns, leek, borage, 
 			myntes, porrettes, fenel, and toun cressis, rew, rosemarye, purslarye; 
 			laue and waische hem clene.  Pike hem.  Pluk hem small with thyn 
 			honde, and myng hem wel with rawe oile; lay on vyneger and salt, and 
-			serue it forth."</h2>
+			serue it forth."</h4>
 		<div>Form of Cury</div>
 	</div>
 
-	<div class="item quote" id="jacklang" data-next="feed">
+	<div class="item quote" id="jacklang" data-next="phindle3">
 		<h1>"These were billion dollar companies and we crashed their websites... Oops"</h1>
 		<div>Jack Lang, Raspberry Pi Foundation</div>
 	</div>
+	
+	<div class="item" id="phindle3" data-next="phindle4">
+		<img src="content/images/phindle3.jpg" style="max-width:100%;"/>
+	</div>
+	<div class="item" id="phindle4" data-next="feed">
+		<img src="content/images/phindle4.jpg" style="max-width:100%;"/>
+	</div>
 
-	<div class="item" id="feed" style="padding-top:100px;">
+	<div class="item" id="feed" style="padding-top:100px;" data-next="thetent">
 		<a class="twitter-timeline" href="https://twitter.com/search?q=%23tedxbedford" data-widget-id="345892770948472832">Tweets about "#tedxbedford"</a>
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	</div>
@@ -61,10 +74,12 @@
 	var itemId = "thetent";
 	$(document).ready(function() {
 		$("#thetent").show();
-		$(document).click(function() {
-			$("#" + itemId).hide();
-			itemId = $("#" + itemId).data("next");
-			$("#"+ itemId).fadeIn();
+		$(".item").click(function() {
+			if ($("#" + itemId).data("next")) {
+				$("#" + itemId).hide();
+				itemId = $("#" + itemId).data("next");
+				$("#"+ itemId).fadeIn();
+			}
 		});
 	});
 	</script>
