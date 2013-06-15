@@ -16,6 +16,7 @@
 		margin: 0px;
 		padding: 0px;
 		text-align: center;
+	font-family: sans-serif;
 	}
 	div.item {
 		margin-bottom: 100px;
@@ -28,13 +29,27 @@
 </head>
 <body>
 
-	<div class="item" id="thetent" onclick="$(this).fadeOut();$('#punkquote').fadeIn();">
+	<div class="item" id="thetent" data-next="punk">
 		<img src="content/images/apptent.jpg" style="max-width:100%;"/>
 	</div>
 	
-	<div class="item quote" id="punkquote" onclick="$(this).fadeOut();$('#feed').fadeIn();">
+	<div class="item quote" id="punk" data-next="cury">
 		<h1>"I was a pretty rubbish singer...but that was the point"</h1>
 		<div>Richard Jobson on joining his punk rock band</div>
+	</div>
+
+	<div class="item quote" id="cury" data-next="jacklang">
+	  <h2>"Take persel, sawge, grene garlec, chibolles, oynouns, leek, borage, 
+	myntes, porrettes, fenel, and toun cressis, rew, rosemarye, purslarye; 
+	laue and waische hem clene.  Pike hem.  Pluk hem small with thyn 
+	honde, and myng hem wel with rawe oile; lay on vyneger and salt, and 
+	serue it forth."</h2>
+	  <div>Form of Cury</div>
+	</div>
+
+	<div class="item quote" id="jacklang" data-next="feed">
+	  <h1>"These were billion dollar companies and we crashed their websites... Oops"</h1>
+	  <div>Jack Lang, Raspberry Pi Foundation</div>
 	</div>
  
 	<div class="item" id="feed" style="padding-top:100px;">
@@ -43,8 +58,14 @@
 	</div>
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script type="text/javascript">
+	  var itemId = "thetent";
 	  $(document).ready(function() {
 	  $("#thetent").show();
+	  $(document).click(function() {
+	  $("#" + itemId).hide();
+	  itemId = $("#" + itemId).data("next");
+	  $("#"+ itemId).fadeIn();
+	  });
 	  });
 	</script>
 </body>
