@@ -13,4 +13,42 @@
   <body style="background-color:black;margin:0px;padding:0px;">
     <img src="photo.JPG" style="max-width:100%;"/>
     </body>
+    <div>
+      <p>
+<script src="http://widgets.twimg.com/j/2/widget.js" type="text/javascript"></script>
+<script type="text/javascript">// <![CDATA[
+new TWTR.Widget({
+  version: 2,
+  type: 'search',
+  search: '#tedxbedford', //search term to be returned goes here. Don't forget the # hastag if you are using one
+  interval: 6000,
+  title: 'Criminal Psychology on Twitter',
+  subject: '',
+  width: 220,
+  height: 200,
+  theme: {
+    shell: {
+      background: '#8ec1da',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#444444',
+      links: '#1985b5'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: true,
+    live: true,
+    hashtags: true,
+    timestamp: true,
+    avatars: true,
+    toptweets: true,
+    behavior: 'default'
+  }
+}).render().start();
+// ]]></script>
+</p>
+    </div>
 </html>
