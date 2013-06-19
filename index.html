@@ -18,11 +18,21 @@
 		text-align: center;
 		font-family: sans-serif;
 	}
+	h1#logo {
+		position: absolute;
+		left: 5px;
+		bottom: 5px;
+		margin: 0px;
+		padding: 0px;
+	}
+	span.tedx {
+		color: red;
+	}
 	div.item {
 		display: none;
 	}
 	div.quote {
-		padding: 100px;
+		padding: 20px;
 	}
 	div#next {
 		position: absolute;
@@ -36,12 +46,14 @@
 </head>
 <body>
 
+	<h1 id="logo"><span class="tedx">TEDx</span> Bedford</h1>
+
 	<div class="item" id="thetent" data-next="punk">
 		<img src="content/images/apptent.jpg" style="max-width:100%;"/>
 	</div>
 
 	<div class="item quote" id="punk" data-next="phindle1">
-		<h1>"I was a pretty rubbish singer...but that was the point"</h1>
+		<div class="quoteText">"I was a pretty rubbish singer...but that was the point"</div>
 		<div>Richard Jobson on joining his punk rock band</div>
 	</div>
 	
@@ -53,16 +65,16 @@
 	</div>
 
 	<div class="item quote" id="cury" data-next="jacklang">
-		<h4>"Take persel, sawge, grene garlec, chibolles, oynouns, leek, borage, 
+		<div class="quoteText">"Take persel, sawge, grene garlec, chibolles, oynouns, leek, borage, 
 			myntes, porrettes, fenel, and toun cressis, rew, rosemarye, purslarye; 
 			laue and waische hem clene.  Pike hem.  Pluk hem small with thyn 
 			honde, and myng hem wel with rawe oile; lay on vyneger and salt, and 
-			serue it forth."</h4>
+			serue it forth."</div>
 		<div>Form of Cury</div>
 	</div>
 
 	<div class="item quote" id="jacklang" data-next="phindle3">
-		<h1>"These were billion dollar companies and we crashed their websites... Oops"</h1>
+		<div class="quoteText">"These were billion dollar companies and we crashed their websites... Oops"</div>
 		<div>Jack Lang, Raspberry Pi Foundation</div>
 	</div>
 	
