@@ -10,6 +10,7 @@
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="logos/logo722.png"/>
 	<link rel="apple-touch-icon-precomposed" href="logos/logo57.png"/>
 	<style>
+	* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 	body {
 		background-color: black;
 		color: white;
@@ -18,92 +19,187 @@
 		text-align: center;
 		font-family: sans-serif;
 	}
+	div#navBar {
+		background-color: black;
+		opacity: 0.5;
+		position: fixed;
+		height: 30px;
+		width: 100%;
+		padding: 5px;
+		bottom: 0px;
+	}
 	h1#logo {
-		position: absolute;
-		left: 5px;
-		bottom: 5px;
 		margin: 0px;
-		padding: 0px;
+		text-align: left;
+		font-size: 20px;
 	}
 	span.tedx {
 		color: red;
 	}
+	div.section {
+		display: none;
+	}
 	div.item {
 		display: none;
+	}
+	div.item img {
+		max-width: 100%;
 	}
 	div.quote {
 		padding: 20px;
 	}
-	div#next {
-		position: absolute;
-		font-size: 100px;
+	div.quoteAttrib {
+		font-style: italic;
+	}
+	div#next, div#prev {
+		position: fixed;
+		top: 20px;
 		font-weight: bold;
-		right: 20px;
-		bottom: 10px;
-		opacity: 0.4;
+		font-size: 100px;
+		opacity: 0.5;
+		line-height: 0px;
+	}
+	div#next {
+		right: 0px;
+	}
+	div#prev {
+		left: 0px;
 	}
 	</style>
 </head>
 <body>
 
-	<h1 id="logo"><span class="tedx">TEDx</span> Bedford</h1>
-
-	<div class="item" id="thetent" data-next="punk">
-		<img src="content/images/apptent.jpg" style="max-width:100%;"/>
-	</div>
-
-	<div class="item quote" id="punk" data-next="phindle1">
-		<div class="quoteText">"I was a pretty rubbish singer...but that was the point"</div>
-		<div>Richard Jobson on joining his punk rock band</div>
+	<div id="navBar">
+		<h1 id="logo"><span class="tedx">TEDx</span> Bedford</h1>
 	</div>
 	
-	<div class="item" id="phindle1" data-next="phindle2">
-		<img src="content/images/phindle1.jpg" style="max-width:100%;"/>
-	</div>
-	<div class="item" id="phindle2" data-next="cury">
-		<img src="content/images/phindle2.jpg" style="max-width:100%;"/>
-	</div>
+	<div id="gallery" class="section">
+		
+		<div id="prev">&laquo;</div>
+		<div id="next">&raquo;</div>
+		
+		<div id="items">
 
-	<div class="item quote" id="cury" data-next="jacklang">
-		<div class="quoteText">"Take persel, sawge, grene garlec, chibolles, oynouns, leek, borage, 
-			myntes, porrettes, fenel, and toun cressis, rew, rosemarye, purslarye; 
-			laue and waische hem clene.  Pike hem.  Pluk hem small with thyn 
-			honde, and myng hem wel with rawe oile; lay on vyneger and salt, and 
-			serue it forth."</div>
-		<div>Form of Cury</div>
-	</div>
+			<div class="item">
+				<img src="content/images/apptent.jpg"/>
+			</div>
+	
+			<div class="item">
+				<img src="content/images/phindle1.jpg"/>
+			</div>
+			
+			<div class="item quote">
+				<div class="quoteText">"I was a pretty rubbish singer...but that was the point"</div>
+				<div class="quoteAttrib">Richard Jobson on joining his punk rock band</div>
+			</div>
+	
+			<div class="item">
+				<img src="content/images/phindle3.jpg" style="margin-top:20px"/>
+			</div>
+		
+			<div class="item">
+				<img src="content/images/A_Little_Less_Radical.JPG" style="margin-top:20px"/>
+				<img src="content/images/Power_Passion_Purpose.JPG"/>
+			</div>
+			
+			<div class="item quote">
+				<div class="quoteText">"Take persel, sawge, grene garlec, chibolles, oynouns, leek, borage, 
+					myntes, porrettes, fenel, and toun cressis, rew, rosemarye, purslarye; 
+					laue and waische hem clene.  Pike hem.  Pluk hem small with thyn 
+					honde, and myng hem wel with rawe oile; lay on vyneger and salt, and 
+					serue it forth."</div>
+				<div class="quoteAttrib">Form of Cury</div>
+			</div>
+		
+			<div class="item">
+				<img src="content/images/phindle4.jpg" style="margin-top:20px"/>
+			</div>
 
-	<div class="item quote" id="jacklang" data-next="phindle3">
-		<div class="quoteText">"These were billion dollar companies and we crashed their websites... Oops"</div>
-		<div>Jack Lang, Raspberry Pi Foundation</div>
+			<div class="item">
+				<img src="content/images/bysign.jpg" style="margin-top:20px"/>
+			</div>
+
+			<div class="item">
+				<img src="content/images/phindle5.jpg"/>
+			</div>
+		
+			<div class="item quote">
+				<div class="quoteText">"These were billion dollar companies and we crashed their websites... Oops"</div>
+				<div class="quoteAttrib">Jack Lang, Raspberry Pi Foundation</div>
+			</div>
+			
+			<div class="item">
+				<img src="content/images/phindle6.jpg"/>
+			</div>
+		
+			<div class="item">
+				<img src="content/images/pants.JPG"/>
+			</div>
+		
+			<div class="item">
+				<img src="content/images/phindle7.jpg"/>
+			</div>
+
+			<div class="item">
+				<img src="content/images/phindle8.jpg"/>
+			</div>
+
+			<div class="item">
+				<div style="margin:20px;">
+					<a class="twitter-timeline" href="https://twitter.com/search?q=%23tedxbedford" data-widget-id="345892770948472832">Tweets about "#tedxbedford"</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				</div>
+			</div>
+			
+		</div>
+	
 	</div>
 	
-	<div class="item" id="phindle3" data-next="phindle4">
-		<img src="content/images/phindle3.jpg" style="max-width:100%;"/>
-	</div>
-	<div class="item" id="phindle4" data-next="feed">
-		<img src="content/images/phindle4.jpg" style="max-width:100%;"/>
-	</div>
-
-	<div class="item" id="feed" style="padding-top:100px;" data-next="thetent">
-		<a class="twitter-timeline" href="https://twitter.com/search?q=%23tedxbedford" data-widget-id="345892770948472832">Tweets about "#tedxbedford"</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	<div id="salads" class="section">
+		Hairy bittercress, pea shoots, microgreens, fat hen, well rocket, red valerian, violas
 	</div>
 	
-	<div id="next">&raquo;</div>
+	<div id="haiku" class="section">
+		dfsd
+	</div>
 	
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script type="text/javascript">
-	var itemId = "thetent";
 	$(document).ready(function() {
-		$("#thetent").show();
+		$("#gallery").show();
+		var item = $("div.item").first();
+		item.show();
 		$("#next").click(function() {
-			if ($("#" + itemId).data("next")) {
-				$("#" + itemId).hide();
-				itemId = $("#" + itemId).data("next");
-				$("#"+ itemId).fadeIn();
+			item.hide();
+			item = item.next();
+			if (item.size() == 0) item = $("div.item").first();
+			item.fadeIn();
+			if (item.hasClass("quote")) {
+				resizeItem();
 			}
 		});
+		$("#prev").click(function() {
+			item.hide();
+			item = item.prev();
+			if (item.size() == 0) item = $("div.item").last();
+			item.fadeIn();
+			if (item.hasClass("quote")) {
+				resizeItem();
+			}
+		});
+		function resizeItem() {
+			var max = $(window).height() - 100;
+			var text = item.find("div.quoteText");
+			while (item.height() < max) {
+				text.css("font-size", (parseInt(text.css("font-size")) + 1) + "px");
+			}
+			console.log("Here" + item.height() + " > " + max);
+			while (item.height() > max) {
+				text.css("font-size", (parseInt(text.css("font-size")) - 1) + "px");
+				console.log(item.height());
+			}
+		}
+		$(window).resize(resizeItem);
 	});
 	</script>
 </body>
