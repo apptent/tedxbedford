@@ -46,37 +46,55 @@
 		max-width: 100%;
 	}
 	div.quote {
-		padding: 20px;
+		padding: 20px 100px;
 	}
 	div.quoteAttrib {
 		font-style: italic;
 	}
 	div#next, div#prev {
 		position: fixed;
-		top: 20px;
-		font-weight: bold;
-		font-size: 100px;
+		height: 100px;
+		width: 100px;
+		top: 10px;
 		opacity: 0.5;
 		line-height: 0px;
 	}
 	div#next {
-		right: 0px;
+		right: 10px;
 	}
 	div#prev {
-		left: 0px;
+		left: 10px;
+	}
+	div.salad {
+		clear: both;
+	}
+	div.salad img {
+		max-width: 50%;
+	}
+	div.salad ul {
+		width: 50%;
+		float: right;
+		text-align: left;
+		font-size: large;
+		padding: 50px;
 	}
 	</style>
 </head>
 <body>
 
 	<div id="navBar">
-		<h1 id="logo"><span class="tedx">TEDx</span> Bedford</h1>
+		<div style="float:right;">
+			<button onclick="showSection('gallery');" id="galleryButton" class="sectionButton">gallery</button>
+			<button onclick="showSection('haikus');" id="haikusButton" class="sectionButton">haikus</button>
+			<button onclick="showSection('salads');" id="saladsButton" class="sectionButton">salads</button>
+		</div>
+		<h1 id="logo"><span class="tedx">TEDx</span>Bedford</h1>
 	</div>
 	
 	<div id="gallery" class="section">
 		
-		<div id="prev">&laquo;</div>
-		<div id="next">&raquo;</div>
+		<div id="prev"><img src="content/images/prev.png"/></div>
+		<div id="next"><img src="content/images/next.png"/></div>
 		
 		<div id="items">
 
@@ -147,7 +165,7 @@
 			<div class="item">
 				<div style="margin:20px;">
 					<a class="twitter-timeline" href="https://twitter.com/search?q=%23tedxbedford" data-widget-id="345892770948472832">Tweets about "#tedxbedford"</a>
-					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					<!--script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script-->
 				</div>
 			</div>
 			
@@ -156,19 +174,69 @@
 	</div>
 	
 	<div id="salads" class="section">
-		Hairy bittercress, pea shoots, microgreens, fat hen, well rocket, red valerian, violas
+		<div class="salad">
+			<ul onclick="$(this).children().css('color', 'red');$(this).children('.correct').css('color', 'green');">
+				<li>Hairy Bittercress?</li>
+				<li>Pea Shoots?</li>
+				<li class="correct">Microgreens?</li>
+				<li>Fat Hen?</li>
+				<li>Wild Rocket?</li>
+			</ul>
+			<img src="content/images/saladsmicro.jpg"/>
+		</div>
+		<div class="salad">
+			<ul onclick="$(this).children().css('color', 'red');$(this).children('.correct').css('color', 'green');">
+				<li>Hairy Bittercress?</li>
+				<li>Pea Shoots?</li>
+				<li>Microgreens?</li>
+				<li>Fat Hen?</li>
+				<li class="correct">Wild Rocket?</li>
+			</ul>
+			<img src="content/images/saladsrocket.jpg"/>
+		</div>
+		<div class="salad">
+			<ul onclick="$(this).children().css('color', 'red');$(this).children('.correct').css('color', 'green');">
+				<li class="correct">Hairy Bittercress?</li>
+				<li>Pea Shoots?</li>
+				<li>Microgreens?</li>
+				<li>Fat Hen?</li>
+				<li>Wild Rocket?</li>
+			</ul>
+			<img src="content/images/saladshairy.jpg"/>
+		</div>
+		<div class="salad">
+			<ul onclick="$(this).children().css('color', 'red');$(this).children('.correct').css('color', 'green');">
+				<li>Hairy Bittercress?</li>
+				<li class="correct">Pea Shoots?</li>
+				<li>Microgreens?</li>
+				<li>Fat Hen?</li>
+				<li>Wild Rocket?</li>
+			</ul>
+			<img src="content/images/saladspea.jpg"/>
+		</div>
+		<div class="salad">
+			<ul onclick="$(this).children().css('color', 'red');$(this).children('.correct').css('color', 'green');">
+				<li>Hairy Bittercress?</li>
+				<li>Pea Shoots?</li>
+				<li>Microgreens?</li>
+				<li class="correct">Fat Hen?</li>
+				<li>Wild Rocket?</li>
+			</ul>
+			<img src="content/images/saladshen.jpg"/>
+		</div>
 	</div>
 	
 	<div id="haiku" class="section">
-		dfsd
+		
 	</div>
 	
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script type="text/javascript">
+	var item;
 	$(document).ready(function() {
-		$("#gallery").show();
-		var item = $("div.item").first();
+		item = $("div.item").first();
 		item.show();
+		showSection("gallery");
 		$("#next").click(function() {
 			item.hide();
 			item = item.next();
@@ -187,20 +255,26 @@
 				resizeItem();
 			}
 		});
-		function resizeItem() {
-			var max = $(window).height() - 100;
-			var text = item.find("div.quoteText");
-			while (item.height() < max) {
-				text.css("font-size", (parseInt(text.css("font-size")) + 1) + "px");
-			}
-			console.log("Here" + item.height() + " > " + max);
-			while (item.height() > max) {
-				text.css("font-size", (parseInt(text.css("font-size")) - 1) + "px");
-				console.log(item.height());
-			}
-		}
 		$(window).resize(resizeItem);
 	});
+	function resizeItem() {
+		var max = $(window).height() - 100;
+		var text = item.find("div.quoteText");
+		while (item.height() < max) {
+			text.css("font-size", (parseInt(text.css("font-size")) + 1) + "px");
+		}
+		console.log("Here" + item.height() + " > " + max);
+		while (item.height() > max) {
+			text.css("font-size", (parseInt(text.css("font-size")) - 1) + "px");
+			console.log(item.height());
+		}
+	}
+	function showSection(section) {
+		$(".sectionButton").css("color", "black");
+		$("#" + section + "Button").css("color", "red");
+		$(".section").hide();
+		$("#" + section + "").show();
+	}
 	</script>
 </body>
 </html>
