@@ -48,6 +48,9 @@
 	div.quote {
 		padding: 20px 100px;
 	}
+	div.quoteText {
+		font-size: 300%;
+	}
 	div.quoteAttrib {
 		font-style: italic;
 	}
@@ -76,7 +79,7 @@
 		float: right;
 		text-align: left;
 		font-size: large;
-		padding: 50px;
+		padding: 5px;
 	}
 	</style>
 </head>
@@ -121,7 +124,7 @@
 			</div>
 			
 			<div class="item quote">
-				<div class="quoteText">"Take persel, sawge, grene garlec, chibolles, oynouns, leek, borage, 
+				<div class="quoteText" style="font-size:medium;">"Take persel, sawge, grene garlec, chibolles, oynouns, leek, borage, 
 					myntes, porrettes, fenel, and toun cressis, rew, rosemarye, purslarye; 
 					laue and waische hem clene.  Pike hem.  Pluk hem small with thyn 
 					honde, and myng hem wel with rawe oile; lay on vyneger and salt, and 
@@ -242,33 +245,14 @@
 			item = item.next();
 			if (item.size() == 0) item = $("div.item").first();
 			item.fadeIn();
-			if (item.hasClass("quote")) {
-				resizeItem();
-			}
 		});
 		$("#prev").click(function() {
 			item.hide();
 			item = item.prev();
 			if (item.size() == 0) item = $("div.item").last();
 			item.fadeIn();
-			if (item.hasClass("quote")) {
-				resizeItem();
-			}
 		});
-		$(window).resize(resizeItem);
 	});
-	function resizeItem() {
-		var max = $(window).height() - 100;
-		var text = item.find("div.quoteText");
-		while (item.height() < max) {
-			text.css("font-size", (parseInt(text.css("font-size")) + 1) + "px");
-		}
-		console.log("Here" + item.height() + " > " + max);
-		while (item.height() > max) {
-			text.css("font-size", (parseInt(text.css("font-size")) - 1) + "px");
-			console.log(item.height());
-		}
-	}
 	function showSection(section) {
 		$(".sectionButton").css("color", "black");
 		$("#" + section + "Button").css("color", "red");
