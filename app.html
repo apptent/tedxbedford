@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TedXBedford</title>
+	<link rel="shortcut icon" type="image/png" href="http://fwd.youcanbook.me/pages/blank.png"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes"/
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="logos/logo144.png"/>
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="logos/logo144.png"/>
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="logos/logo722.png"/>
+	<link rel="apple-touch-icon-precomposed" href="logos/logo57.png"/>
+	<style>
+	* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+	body {
+		background-color: black;
+		color: white;
+		margin: 0px;
+		padding: 0px;
+		text-align: center;
+		font-family: sans-serif;
+	}
+	div#navBar {
+		background-color: black;
+		opacity: 0.5;
+		position: fixed;
+		height: 30px;
+		width: 100%;
+		padding: 5px;
+		bottom: 0px;
+	}
+	h1#logo {
+		margin: 0px;
+		text-align: left;
+		font-size: 20px;
+	}
+	span.tedx {
+		color: red;
+	}
+	div.section {
+		display: none;
+	}
+	div.item {
+		display: none;
+	}
+	div.item img {
+		max-width: 100%;
+	}
+	div.quote {
+		padding: 20px 100px;
+	}
+	div.quoteText {
+		font-size: 200%;
+	}
+	div.quoteAttrib {
+		font-style: italic;
+	}
+	div#next, div#prev {
+		position: fixed;
+		height: 100px;
+		width: 100px;
+		top: 10px;
+		opacity: 0.5;
+		line-height: 0px;
+	}
+	div#next {
+		right: 10px;
+	}
+	div#prev {
+		left: 10px;
+	}
+	div.salad {
+		clear: both;
+	}
+	div.salad img {
+		max-width: 50%;
+	}
+	div.salad ul {
+		width: 50%;
+		float: right;
+		text-align: left;
+		font-size: large;
+		padding: 5px;
+	}
+	div.haikus select {
+		width: 100%;
+	}
+	</style>
+</head>
+<body>
+
+	<div id="navBar">
+		<div style="float:right;">
+			<button onclick="showSection('gallery');" id="galleryButton" class="sectionButton">gallery</button>
+			<button onclick="showSection('haikus');" id="haikusButton" class="sectionButton">haikus</button>
+			<button onclick="showSection('salads');" id="saladsButton" class="sectionButton">salads</button>
+		</div>
+		<h1 id="logo"><span class="tedx">TEDx</span>Bedford</h1>
+	</div>
+	
+	<div id="gallery" class="section">
+		
+		<div id="prev"><img src="content/images/prev.png"/></div>
+		<div id="next"><img src="content/images/next.png"/></div>
+		
+		<div id="items">
+
+			<div class="item">
+				<img src="content/images/apptent.jpg"/>
+			</div>
+	
+			<div class="item">
+				<img src="content/images/phindle1.jpg"/>
+			</div>
+			
+			<div class="item quote">
+				<div class="quoteText">"I was a pretty rubbish singer...but that was the point"</div>
+				<div class="quoteAttrib">Richard Jobson on joining his punk rock band</div>
+			</div>
+	
+			<div class="item">
+				<img src="content/images/phindle3.jpg" style="margin-top:20px"/>
+			</div>
+		
+			<div class="item">
+				<img src="content/images/A_Little_Less_Radical.JPG" style="margin-top:20px"/>
+				<img src="content/images/Power_Passion_Purpose.JPG"/>
+			</div>
+			
+			<div class="item quote">
+				<div class="quoteText" style="font-size:medium;">"Take persel, sawge, grene garlec, chibolles, oynouns, leek, borage, 
+					myntes, porrettes, fenel, and toun cressis, rew, rosemarye, purslarye; 
+					laue and waische hem clene.  Pike hem.  Pluk hem small with thyn 
+					honde, and myng hem wel with rawe oile; lay on vyneger and salt, and 
+					serue it forth."</div>
+				<div class="quoteAttrib">Form of Cury</div>
+			</div>
+		
+			<div class="item">
+				<img src="content/images/phindle4.jpg" style="margin-top:20px"/>
+			</div>
+
+			<div class="item">
+				<img src="content/images/bysign.jpg" style="margin-top:20px"/>
+			</div>
+
+			<div class="item">
+				<img src="content/images/phindle5.jpg"/>
+			</div>
+		
+			<div class="item quote">
+				<div class="quoteText">"These were billion dollar companies and we crashed their websites... Oops"</div>
+				<div class="quoteAttrib">Jack Lang, Raspberry Pi Foundation</div>
+			</div>
+			
+			<div class="item">
+				<img src="content/images/phindle6.jpg"/>
+			</div>
+		
+			<div class="item">
+				<img src="content/images/pants.JPG"/>
+			</div>
+		
+			<div class="item">
+				<img src="content/images/phindle7.jpg"/>
+			</div>
+
+			<div class="item">
+				<img src="content/images/phindle8.jpg"/>
+			</div>
+			
+
+			<div class="item">
+				<div style="margin:20px;">
+					<a class="twitter-timeline" href="https://twitter.com/search?q=%23tedxbedford" data-widget-id="345892770948472832">Tweets about "#tedxbedford"</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				</div>
+			</div>
+			
+			<div class="item">
+				<p>Thanks to <a href="http://petehindle.com/" style="color:white;">Pete Hindle<a> for all the artwork.<p>
+				<p>A big thank you to all participants for supplying the content and ideas.</p>
+				<p>Sorry we didn't have time to include everything submitted!</p>
+			</div>
+			
+		</div>
+	
+	</div>
+	
+	<div id="salads" class="section">
+		<h1>Know Your Salads...</h1>
+		<h3>Tap on the names on the left to check your guess.</h3>
+		<div class="salad">
+			<ul onclick="$(this).children().css('color', 'red');$(this).children('.correct').css('color', 'green');">
+				<li>Hairy Bittercress?</li>
+				<li>Pea Shoots?</li>
+				<li class="correct">Microgreens?</li>
+				<li>Fat Hen?</li>
+				<li>Wild Rocket?</li>
+			</ul>
+			<img src="content/images/saladsmicro.jpg"/>
+		</div>
+		<div class="salad">
+			<ul onclick="$(this).children().css('color', 'red');$(this).children('.correct').css('color', 'green');">
+				<li>Hairy Bittercress?</li>
+				<li>Pea Shoots?</li>
+				<li>Microgreens?</li>
+				<li>Fat Hen?</li>
+				<li class="correct">Wild Rocket?</li>
+			</ul>
+			<img src="content/images/saladsrocket.jpg"/>
+		</div>
+		<div class="salad">
+			<ul onclick="$(this).children().css('color', 'red');$(this).children('.correct').css('color', 'green');">
+				<li class="correct">Hairy Bittercress?</li>
+				<li>Pea Shoots?</li>
+				<li>Microgreens?</li>
+				<li>Fat Hen?</li>
+				<li>Wild Rocket?</li>
+			</ul>
+			<img src="content/images/saladshairy.jpg"/>
+		</div>
+		<div class="salad">
+			<ul onclick="$(this).children().css('color', 'red');$(this).children('.correct').css('color', 'green');">
+				<li>Hairy Bittercress?</li>
+				<li class="correct">Pea Shoots?</li>
+				<li>Microgreens?</li>
+				<li>Fat Hen?</li>
+				<li>Wild Rocket?</li>
+			</ul>
+			<img src="content/images/saladspea.jpg"/>
+		</div>
+		<div class="salad">
+			<ul onclick="$(this).children().css('color', 'red');$(this).children('.correct').css('color', 'green');">
+				<li>Hairy Bittercress?</li>
+				<li>Pea Shoots?</li>
+				<li>Microgreens?</li>
+				<li class="correct">Fat Hen?</li>
+				<li>Wild Rocket?</li>
+			</ul>
+			<img src="content/images/saladshen.jpg"/>
+		</div>
+	</div>
+	
+	<div id="haikus" class="section">
+		<h1><span class="tedx">TEDx</span>Bedford Haikus</h1>
+		<h3>By Mary Ann</h3>
+		<p>
+			Click to read: 
+			<button onclick="$('select').val(1)">1</button> 
+			<button onclick="$('select').val(2)">2</button> 
+			<button onclick="$('select').val(3)">3</button> 
+			<button onclick="$('select').val(4)">4</button> 
+			<button onclick="$('select').val(5)">5</button> 
+			<button onclick="$('select').val(6)">6</button>
+		</p>
+		<p>Or pick and mix...</p>
+		<div>
+			<select id="line1">
+				<option value="1">Radicals meet here</option>
+				<option value="2">Folded up trouser cuffs</option>
+				<option value="3">Hot pink pants passions</option>
+				<option value="4">Cany Ash takes weeds</option>
+				<option value="5">Musical eggs shake</option>
+				<option value="6">David's doodling</option>
+			</select>
+		</div>
+		<div>
+			<select id="line2">
+				<option value="1">Divergence or convergence</option>
+				<option value="2">Before I die I want to</option>
+				<option value="3">Rock stars don't live without fans</option>
+				<option value="4">Stitching fabrics of a place</option>
+				<option value="5">Diverse harmony at TED</option>
+				<option value="6">Enhancing the creative</option>
+			</select>
+		</div>
+		<div>
+			<select id="line3">
+				<option value="1">Inspirational!</option>
+				<option value="2">Shake up a place, Dan!</option>
+				<option value="3">Love, trust, innovate!</option>
+				<option value="4">She makes them gourmet</option>
+				<option value="5">Uplifting our lives</option>
+				<option value="6">Change education!</option>
+			</select>
+		</div>
+	</div>
+	
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript">
+	var item;
+	$(document).ready(function() {
+		item = $("div.item").first();
+		item.show();
+		showSection("gallery");
+		$("#next").click(function() {
+			item.hide();
+			item = item.next();
+			if (item.size() == 0) item = $("div.item").first();
+			item.fadeIn();
+		});
+		$("#prev").click(function() {
+			item.hide();
+			item = item.prev();
+			if (item.size() == 0) item = $("div.item").last();
+			item.fadeIn();
+		});
+	});
+	function showSection(section) {
+		$(".sectionButton").css("color", "black");
+		$("#" + section + "Button").css("color", "green");
+		$(".section").hide();
+		$("#" + section + "").show();
+		if (section == "salads") $("li").css("color", "white");
+	}
+	</script>
+</body>
+</html>
