@@ -49,7 +49,7 @@
 		padding: 20px 100px;
 	}
 	div.quoteText {
-		font-size: 300%;
+		font-size: 200%;
 	}
 	div.quoteAttrib {
 		font-style: italic;
@@ -80,6 +80,9 @@
 		text-align: left;
 		font-size: large;
 		padding: 5px;
+	}
+	div.haikus select {
+		width: 100%;
 	}
 	</style>
 </head>
@@ -177,6 +180,8 @@
 	</div>
 	
 	<div id="salads" class="section">
+		<h1>Know Your Salads...</h1>
+		<h3>Tap on the names on the left to check your guess.</h3>
 		<div class="salad">
 			<ul onclick="$(this).children().css('color', 'red');$(this).children('.correct').css('color', 'green');">
 				<li>Hairy Bittercress?</li>
@@ -229,8 +234,49 @@
 		</div>
 	</div>
 	
-	<div id="haiku" class="section">
-		
+	<div id="haikus" class="section">
+		<h1><span class="tedx">TEDx</span>Bedford Haikus</h1>
+		<h3>By Mary Ann</h3>
+		<p>
+			Click to read: 
+			<button onclick="$('select').val(1)">1</button> 
+			<button onclick="$('select').val(2)">2</button> 
+			<button onclick="$('select').val(3)">3</button> 
+			<button onclick="$('select').val(4)">4</button> 
+			<button onclick="$('select').val(5)">5</button> 
+			<button onclick="$('select').val(6)">6</button>
+		</p>
+		<p>Or pick and mix...</p>
+		<div>
+			<select id="line1">
+				<option value="1">Radicals meet here</option>
+				<option value="2">Folded up trouser cuffs</option>
+				<option value="3">Hot pink pants passions</option>
+				<option value="4">Cany Ash takes weeds</option>
+				<option value="5">Musical eggs shake</option>
+				<option value="6">David's doodling</option>
+			</select>
+		</div>
+		<div>
+			<select id="line2">
+				<option value="1">Divergence or convergence</option>
+				<option value="2">Before I die I want to</option>
+				<option value="3">Rock stars don't live without fans</option>
+				<option value="4">Stitching fabrics of a place</option>
+				<option value="5">Diverse harmony at TED</option>
+				<option value="6">Enhancing the creative</option>
+			</select>
+		</div>
+		<div>
+			<select id="line3">
+				<option value="1">Inspirational!</option>
+				<option value="2">Shake up a place, Dan!</option>
+				<option value="3">Love, trust, innovate!</option>
+				<option value="4">She makes them gourmet</option>
+				<option value="5">Uplifting our lives</option>
+				<option value="6">Change education!</option>
+			</select>
+		</div>
 	</div>
 	
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
@@ -255,9 +301,10 @@
 	});
 	function showSection(section) {
 		$(".sectionButton").css("color", "black");
-		$("#" + section + "Button").css("color", "red");
+		$("#" + section + "Button").css("color", "green");
 		$(".section").hide();
 		$("#" + section + "").show();
+		if (section == "salads") $("li").css("color", "white");
 	}
 	</script>
 </body>
